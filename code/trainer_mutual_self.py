@@ -88,7 +88,7 @@ class condGANTrainer(object):
         # face detection
         detector = dlib.get_frontal_face_detector()
         # lmk detection
-        predictor_path = r'/home/rookie/cwt/LAGAN2/models/shape_predictor_68_face_landmarks.dat'
+        predictor_path = '../models/shape_predictor_68_face_landmarks.dat'
         predictor = dlib.shape_predictor(predictor_path)
         print('Load face lmk model')
 
@@ -269,7 +269,8 @@ class condGANTrainer(object):
             # while step < self.num_batches:
             for _ in tqdm(range(len(data_iter))):
 
-                data = data_iter.next()
+                # data = data_iter.next()
+                data = next(data_iter)
                 imgs, captions, cap_lens, class_ids, keys, wrong_caps, wrong_caps_len, wrong_cls_id = prepare_data(
                     data)
 

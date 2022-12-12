@@ -28,7 +28,8 @@ def parse_args():
         '--cfg',
         dest='cfg_file',
         help='optional config file',
-        default=r'/home/rookie/cwt/LAGAN2/code/cfg/train_sketch_18_4.yml',
+        # default='E:/Projects/0GitHub_Repository/ed/LAGAN/code/cfg/train_sketch_18_4.yml',
+        default='./cfg/train_sketch_18_4.yml',
         type=str)
     parser.add_argument('--gpu', dest='gpu_id', type=int, default=0)
     parser.add_argument('--data_dir', dest='data_dir', type=str, default='')
@@ -141,7 +142,7 @@ if __name__ == "__main__":
 
     image_transform = transforms.Compose([
         # transforms.Scale(int(imsize * 76 / 64)),
-        transforms.Scale(int(imsize * 65 / 64)),
+        transforms.Resize(int(imsize * 65 / 64)),
         # transforms.Scale(int(imsize)),
         transforms.RandomCrop(imsize),
         # transforms.Resize(imsize),
