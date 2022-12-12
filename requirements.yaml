@@ -1,0 +1,19 @@
+name: camera-seg
+channels:
+  - default
+  - conda-forge
+depedencies:
+  - cmake
+  - dlib
+  - easydict
+  - nltk 
+  - numpy
+  - pandas
+  - Pillow
+  - python_dateutil
+  - PyYAML
+  - scikit_image
+  - skimage
+  - torch
+  - torchvision 
+  - tqdm
